@@ -28,16 +28,16 @@ $$A = (S, D, A, T)$$
 
 Where:
 
-- S is the set of possible states of the agent, where each state is a tuple of $(c_t, h_t, b_t)$
+- $S$ is the set of possible states of the agent, where each state is a tuple of $(c_t, h_t, b_t)$
   - $c_t$: agent's context at time $t$
   - $h_t$: history of transactions and actions up to time $t$
   - $b_t$: balance of the agent at time $t$
-- D is the set of decision engine calls available to the agent (i.e. LLM)
-- A is the set of possible actions of the agent, including:
+- $D$ is the set of decision engine calls available to the agent (i.e. LLM)
+- $A$ is the set of possible actions of the agent, including:
   - Core business logic actions
   - Self-scheduling actions 
   - State management actions
-- T is the transition function $T: S × D × A → S$ that defines:
+- $T$ is the transition function $T: S × D × A → S$ that defines:
   - How the agent's state updates after actions
   - How the LLM outputs are processed
   - The sequence of contract function calls
@@ -45,11 +45,11 @@ Where:
 
 At each time step $t$, the agent takes its current state $s_t$ and updates it according to the transition function $T$ with the current decision engine $D$ and action $a_t$. The action inflicts a state transition on the agent's state to $s_{t+1}$ and updates the blockchain state. 
 
-The transition function T encodes the actual smart contract code that:
-1. Retrieves necessary data (part of S)
-2. Calls the LLM (D)
+The transition function $T$ encodes the actual smart contract code that:
+1. Retrieves necessary data (part of $S$)
+2. Calls the LLM ($D$)
 3. Processes the LLM output
-4. Executes the appropriate actions (A) including self-scheduling actions
+4. Executes the appropriate actions ($A$) including self-scheduling actions
 5. Updates the contract state
 
 We define a subset of all possible actions $A$ as the self-scheduling actions $A_{ss}$. When the transition function $T$ is implemented with a self-scheduling action, $T: S × D × A_{ss} → S$, we call $T$ an autonomy loop. The presence of the self-scheduling action allows the agent to schedule itself to run at a future time. This is a key feature of the agent's autonomy, as it allows the agent to plan for future actions and state transitions without relying on human intervention or external orchestration.
