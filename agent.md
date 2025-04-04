@@ -85,26 +85,38 @@ Current industry approaches attempt to resolve this tension through verification
 
 1. Zero-Knowledge Verification:
    Let $D_t$ produce result $r_t$ with proof $\pi_t$. Verification requires:
+   
    $$verify(\pi_t, r_t) = true$$
+
    The computational overhead is:
+   
    $$O_{zk} = O(n_{params} \cdot n_{ops})$$
+
    where $n_{params}$ is the number of model parameters and $n_{ops}$ is the number of operations. This approach, while providing cryptographic guarantees, imposes a high computational overhead over the inference cost and scales poorly with model size.
 
 2. Optimistic Verification:
    Let $D_t$ be a decision engine call with result $r_t$. The result is accepted after a challenge period $c$ unless disputed:
+   
    $$accept(r_t) = \begin{cases} 
    true & \text{if no dispute within } c \\
    false & \text{otherwise}
    \end{cases}$$
+
    The computational overhead is:
+   
    $$O_{opt} = n_{watchers} \cdot O_{inference}$$
+
    where $n_{watchers}$ is the number of watchers. This approach introduces latency proportional to $c$ and requires $n_{watchers} \geq 1$ honest watchers. The overhead is $O_{opt} \geq n_{watchers}x$ inference cost. While requiring less computational resources than zero-knowledge verification, this approach uses interactive fraud proofs in case of disputes that are infamously difficult to implement and test, limiting the utility of the approach.
 
 3. Quorum Verification:
    Let $Q = \{D_1, D_2, ..., D_n\}$ be a set of $n$ decision engine calls. The result is accepted if:
+   
    $$| \{D_i \in Q | result(D_i) = result(D_j)\} | \geq k$$
+
    where $k$ is the quorum threshold. The cost overhead is:
+   
    $$O_{q} = n \cdot O_{inference}$$
+
    This approach allows selecting the security level $n$ according to the application requirements with the resulting inference cost being linear in $n$. 
 
 These verification-centric approaches are fundamentally limited because of the imposed overhead and inability to scale to state-of-the-art models. Most importantly, however, they focus on verifiability rather than utility and creativity of the decision engine, and are thus unsuitable for the decision making process of an autonomous agent. Instead, we would like to view the agent akin to a human decision maker that can take actions based on their utility function, which is a function of the decision engine's output. In this paradigm, the actual reasoning behind a decision is not important, but the decision's utility to the agent is. By virtue of being a smart contract, the action space of the agent is already constrained by the transition function $T$, the blockchain protocol, and the agent's balance. Any action taken by the agent as result of a decision engine call is valid as long as the agent can afford to take it. As an example, a human user can decide to take an on-chain action based on it's own decision making process, even if the reasoning is not rational or incorrect. A human user may decide to swap $10 ETH$ for $USDC$ for any reason, and the action is valid as long as the user has the funds to do so. We would like to extend this paradigm to the agent's decision making process.
@@ -112,10 +124,20 @@ These verification-centric approaches are fundamentally limited because of the i
 To achieve this, we propose a utility-centric approach that embraces the non-deterministic nature of $D_t$ and focuses on the utility of the decision engine's output. On the side of the compute providers, we propose a reputation-based approach that incentivizes them to honestly provide their inference services combined with TEEs to ensure the integrity of the inference for sensitive data. Such approach is justified by the fact that for most applications, the utility of the decision engine's output is more important than the actual reasoning behind the output. This is evidenced by the success of current industry giants like OpenAI, Google, and Anthropic, which are all based on reputation of their inference services that are not verifiable by any means. 
 
 In an on-chain setting, we utilize a limited set of whitelisted compute providers that are required to register the models they offer, associated costs, and inference speeds and put up collateral in the form of staked tokens. TEE-based verification incurs an overhead of:
+
 $$O_{tee} = (1 + \epsilon) \cdot O_{inference}$$
+
 where $\epsilon \approx 0.1$ represents the TEE overhead. This overhead is significantly lower than the verification-centric approaches:
+
 $$O_{tee} \ll O_{zk} \approx 1000x$$
+
 $$O_{tee} \ll O_{opt} \geq n_{watchers}x$$
+
 $$O_{tee} \ll O_{q} = nx$$
+
 while providing practical security guarantees.
+
+## Action Space
+
+The action space is the set of all possible actions that the agent can take defined by the agent's transition function $T$ within the broader context of the blockchain.
 
