@@ -140,4 +140,33 @@ while providing practical security guarantees.
 ## Action Space
 
 The action space is the set of all possible actions that the agent can take defined by the agent's transition function $T$ within the broader context of the blockchain.
+The actions that are available to the agent can be logically grouped into the following categories:
+- Decision making actions (inference calls, knowledge seeking, appending to history, etc.)
+- Planning actions (scheduling, cancelling scheduled actions, etc.)
+- Interaction actions (transfers, transacting, calling other contracts, etc.)
 
+While the first two categories are more directly relevant to the agent's autonomy loop, the functionalities are available to non-agentic smart contracts and users as well, allowing developers to build dApps that can take actions with varying degrees of autonomy or simply schedule actions to be taken at specified times. This creates a rich ecosystem of applications that can be built on top of the agent framework.
+
+The interaction category complements the agent's autonomy loop by allowing the agent to be a part of a larger ecosystem of contracts and users, and to take actions that are not part of its core business logic. These are the same actions that are available to any other smart contract or user on the blockchain, but the agent can take them autonomously. 
+
+Ideally, the agent's action space should be as rich as possible, allowing the agent to take any action that is allowed by the transition function $T$ and the blockchain protocol. However, at any given time, the agent's action space is constrained by the computational resources available to the agent, which is a function of the agent's balance and the cost of the actions. This implies that the agent's action space is not fixed and can change over time as the agent's balance and the cost of the actions change. Thus, we can measure the "liberty" of the agent as the size of the set of actions that the agent can take at any given time.
+
+$$L_t = |A_t|$$
+
+where $A_t$ is the set of actions that the agent can take at time $t$.
+
+A truly autonomous agent, like any economic entity, has two fundamental goals: maximizing its liberty $L_t$ and ensuring its survival (maintaining $b_t > 0$). The agent will seek to take actions that increase its future action space and maintain positive balance. This can be formalized as a utility function $U_t$ that the agent aims to maximize:
+
+$$U_t = \alpha \cdot L_t + \beta \cdot \mathbb{I}(b_t > 0)$$
+
+where $\alpha$ and $\beta$ are weights representing the agent's preferences, and $\mathbb{I}$ is the indicator function. The agent will select actions $a_t \in A_t$ that maximize its expected future utility:
+
+$$a_t = \arg\max_{a \in A_t} \mathbb{E}[U_{t+1} | a_t = a]$$
+
+This utility maximization drives the agent to:
+- Seek profitable opportunities on the blockchain
+- Maintain sufficient balance for future operations
+- Expand its action space through strategic interactions
+- Preserve its ability to act autonomously
+
+If a goal
