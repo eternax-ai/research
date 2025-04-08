@@ -168,5 +168,3 @@ This utility maximization drives the agent to:
 - Maintain sufficient balance for future operations
 - Expand its action space through strategic interactions
 - Preserve its ability to act autonomously
-
-If a goal
