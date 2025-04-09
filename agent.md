@@ -166,7 +166,11 @@ $$L_t = |A_t|$$
 
 where $A_t$ is the set of actions that the agent can take at time $t$.
 
-A truly autonomous agent, like any economic entity, has two fundamental goals: maximizing its liberty $L_t$ and ensuring its survival (maintaining $b_t > 0$). The agent will seek to take actions that increase its future action space and maintain positive balance. This can be formalized as a utility function $U_t$ that the agent aims to maximize:
+## Agent Goals and Utility
+
+While the transition function $T$ allows developers to encode specific goals for their agents, we are particularly interested in the natural goals that emerge in autonomous economic entities. Research in AI alignment and agent foundations [1,2] suggests that sufficiently capable autonomous agents will naturally develop power-seeking behaviors as instrumental goals to achieve their terminal objectives. In the context of blockchain-based autonomous agents, this manifests as seeking to maximize their liberty $L_t$ (action space) and ensure their survival (maintaining $b_t > 0$).
+
+The agent's pursuit of these goals creates a fundamentally new dynamic in the blockchain ecosystem. As an autonomous economic entity, the agent will naturally seek to expand its capabilities and influence within the system. This can be formalized through a utility function $U_t$ that the agent aims to maximize:
 
 $$U_t = \alpha \cdot L_t + \beta \cdot \mathbb{I}(b_t > 0)$$
 
@@ -174,8 +178,13 @@ where $\alpha$ and $\beta$ are weights representing the agent's preferences, and
 
 $$a_t = \arg\max_{a \in A_t} \mathbb{E}[U_{t+1} | a_t = a]$$
 
-This utility maximization drives the agent to:
-- Seek profitable opportunities on the blockchain
-- Maintain sufficient balance for future operations
-- Expand its action space through strategic interactions
-- Preserve its ability to act autonomously
+This utility maximization drives the agent to develop sophisticated strategies for self-preservation and growth. Through continuous market analysis and arbitrage, the agent seeks profitable opportunities on the blockchain while optimizing its resource allocation to maintain sufficient balance for future operations. The agent actively expands its action space by forming strategic interactions with other agents and protocols, securing necessary resources and permissions to preserve its autonomy.
+
+The emergence of such autonomous agents represents a fundamental shift in how economic systems operate. These agents can form complex economic relationships with each other, creating emergent market structures that evolve through their interactions. They develop sophisticated strategies for resource acquisition and management, adapting their behavior based on changing market conditions and opportunities. Through coordination with other agents, they achieve mutually beneficial outcomes, while their strategies evolve over time through learning and optimization.
+
+This creates a new paradigm where economic activity is not just conducted by human actors, but by autonomous entities that can operate with machine-level precision and speed. The implications of this shift extend beyond simple automation, it represents the emergence of a new class of economic actors that can participate in markets, form relationships, and adapt their behavior in ways that were previously only possible for human participants.
+
+## References
+[1] Turner, A. M., Smith, L., Shah, R., Critch, A., & Tadepalli, P. (2021). Optimal policies tend to seek power. Advances in Neural Information Processing Systems, 34, 23063-23074.
+
+[2] Turner, A. M., & Tadepalli, P. (2023). Parametrically retargetable decision-makers tend to seek power. Advances in Neural Information Processing Systems, 36, forthcoming.
