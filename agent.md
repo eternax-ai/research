@@ -73,14 +73,14 @@ The autonomous agent genesis is defined as the moment the contract code with tra
 
 The evolution of the agent's state can be formalized as follows:
 For each time step $t \geq 0$:
-   - Agent observes relevant subset of $B_t$ through $c_t$
-   - Agent dispatches decision engine call $D_t$ with context $c_t$
-   - Agent selects action $a_t \in A$ based on $D_t$ response $r_t$ and current state $s_t$
-   - State transition: $s_{t+1} = T(s_t, D_t, a_t)$
-   - Action $a_t$ causes blockchain state transition: $B_{t+1} = f(B_t, a_t)$
-   - Action $a_t$ updates both the agent's and the blockchain's history: $h_{t+1} = h_t \cup a_t$
-   - Agent's new state: $s_{t+1} = (c_{t+1}, h_{t+1}, b_{t+1})$
-   - If $a_t$ is a self-scheduling action, the agent schedules itself to run at time $t+1$
+   1. Agent observes relevant subset of $B_t$ through $c_t$
+   2. Agent dispatches decision engine call $D_t$ with context $c_t$
+   3. Agent selects action $a_t \in A$ based on $D_t$ response $r_t$ and current state $s_t$
+   4. State transition: $s_{t+1} = T(s_t, D_t, a_t)$
+   5. Action $a_t$ causes blockchain state transition: $B_{t+1} = f(B_t, a_t)$
+   6. Action $a_t$ updates both the agent's and the blockchain's history: $h_{t+1} = h_t \cup a_t$
+   7. Agent's new state: $s_{t+1} = (c_{t+1}, h_{t+1}, b_{t+1})$
+   8. If $a_t$ is a self-scheduling action, the agent schedules itself to run at time $t+1$
 
 ## Decision Engine
 
@@ -152,9 +152,9 @@ while providing practical security guarantees.
 
 The action space is the set of all possible actions that the agent can take defined by the agent's transition function $T$ within the broader context of the blockchain.
 The actions that are available to the agent can be logically grouped into the following categories:
-- Decision making actions (inference calls, knowledge seeking, appending to history, etc.)
-- Planning actions (scheduling, cancelling scheduled actions, etc.)
-- Interaction actions (transfers, transacting, calling other contracts, etc.)
+1. Decision making actions (inference calls, knowledge seeking, appending to history, etc.)
+2. Planning actions (scheduling, cancelling scheduled actions, etc.)
+3. Interaction actions (transfers, transacting, calling other contracts, etc.)
 
 While the first two categories are more directly relevant to the agent's autonomy loop, the functionalities are available to non-agentic smart contracts and users as well, allowing developers to build dApps that can take actions with varying degrees of autonomy or simply schedule actions to be taken at specified times. This creates a rich ecosystem of applications that can be built on top of the agent framework.
 
