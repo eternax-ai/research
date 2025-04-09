@@ -8,17 +8,28 @@ Informally, we define an autonomous on-chain agent as a program that can autonom
 
 ## Levels of Autonomy
 
-Current state-of-the-art agents (like ai16z, Truth Terminal, etc.) operate at a lower level of autonomy:
-- Require continuous operation of a single computer/server
-- Need human oversight and intervention
-- Depend on external scheduling mechanisms
-- Can only operate when their host infrastructure is running
+Current state-of-the-art agents (like ai16z, Truth Terminal, etc.) operate at a lower level of autonomy. These agents require continuous operation of a single computer or server, necessitating human oversight and intervention for proper functioning. Their operation depends on external scheduling mechanisms, and they can only function when their host infrastructure is running, making them vulnerable to infrastructure failures and human intervention.
 
-Our on-chain agent achieves true autonomy through:
-- Self-contained execution on the blockchain
-- Built-in scheduling at the protocol level
-- Continuous operation independent of any single infrastructure
-- No requirement for human oversight or external orchestration
+Our on-chain agent achieves true autonomy through self-contained execution on the blockchain. The agent incorporates built-in scheduling at the protocol level, enabling continuous operation independent of any single infrastructure component. This design eliminates the requirement for human oversight or external orchestration, allowing the agent to operate autonomously and reliably.
+
+## Blockchain as Autonomous Agent Platform
+
+Blockchains provide the ideal execution environment for autonomous agents due to their fundamental properties:
+
+1. Decentralized Execution:
+   The agent's code is executed by a network of nodes, ensuring no single point of failure and resistance to censorship. This distributed execution guarantees that the agent's operations will be carried out as specified, independent of any single entity's control or influence.
+
+2. Trust Layer:
+   The blockchain provides a transparent and verifiable layer for state transitions and computation. All agent interactions are executed atomically, and cross-agent communication is secured by the underlying consensus mechanism. This trust layer enables agents to interact with each other and with the blockchain state with guaranteed execution and verifiable outcomes.
+
+3. Economic Infrastructure:
+   The blockchain's native token system provides the necessary economic infrastructure for agent operations. Built-in incentive mechanisms ensure proper execution, while transparent cost structures and automated payment systems enable agents to manage their resources and transactions autonomously. This economic layer is crucial for agents to maintain their operations and interact with other economic entities.
+
+4. Persistence and State:
+   The blockchain's immutable code and persistent storage ensure that agent state and operations are preserved indefinitely. Agents have access to the global blockchain state and maintain a time-stamped history of all their actions. This persistence is essential for agents to maintain their autonomy over time and make decisions based on historical context.
+
+These properties collectively enable agents to operate continuously without interruption, interact securely with other agents, maintain persistent state and history, execute transactions atomically, access global blockchain state, schedule future operations, and manage their own resources. The combination of these capabilities makes blockchain the ideal platform for truly autonomous agents.
+
 
 ## Agent Definition
 
