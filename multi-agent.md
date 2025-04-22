@@ -29,7 +29,7 @@ A single super-agent becomes a central point of control — and risk. Misalignme
 ### Cognitive Limitations
 
 A monolithic agent cannot context-switch effectively across disparate domains (e.g., solving a legal dispute while managing real-time DeFi trades). Context windows are finite; a unified model suffers from information overload and emergent incoherence.
-If $C$ is the total context window required for all tasks: $C_mono = sum(c_i), where i = 1 to n$ If $C_mono > C_model$, this results in context spillover.
+If $C$ is the total context window required for all tasks: $C_{mono} = sum(c_i), where i = 1 to n$ If $C_{mono} > C_{model}$, this results in context spillover.
 
 ### Innovation Bottlenecks
 
@@ -49,8 +49,8 @@ In conclusion, a universal agent model is fragile, unsafe, economically closed, 
 
 ### Modular Systems
 
-Multi-agent systems resemble microservice architectures in cloud-native design (Newman, 2015). Each agent operates within a defined context and function, improving performance and reliability.
-$C_multi = max(c_i), where i = 1 to n$ If $C_multi <= C_model$, then performance remains bounded and specialized.
+Multi-agent systems resemble microservice architectures in cloud-native design [6]. Each agent operates within a defined context and function, improving performance and reliability.
+$C_{multi} = max(c_i), where i = 1 to n$ If $C_{multi} <= C_{model}$, then performance remains bounded and specialized.
 
 ### Economic Modeling of Agent Proliferation
 
