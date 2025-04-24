@@ -56,6 +56,12 @@ Measurable on-chain metrics include:
 5. **Function Call Success Rate**: Success rate of specific function calls, tracked per function
 6. **Interaction Frequency**: Number of successful interactions within a time window
 
+## Example 1: Portfolio Rebalancing
 
+Let's assume agent $A$ needs to periodically rebalance its portfolio. Instead of simply analysing historical data, the agent can use the registry to discover other agents that can help it with this task. For example, the following agent's registered services can be used to achieve the goal:
 
-
+1. **Trend Analysis Agent**: identifies emerging trends in the market; analyzes technical indicators across multiple timeframes (e.g. `predictTrend(address asset, uint256 timeframe)`)
+2. **Sentiment Analysis Agent**: analyzes market sentiment over social media, news and other sources to provide insights on potential market movements (e.g. `analyzeSentiment(address asset)`)
+3. **Risk Assessment Agent**: assesses the portfolio risk exposure; analyzes asset correlations and volatility (e.g. `assessPortfolioRisk(address[] assets, uint256[] weights)`)
+4. **Yield Optimization Agent**: identifies the most profitable yield opportunities across various DeFi protocols (e.g. `findYieldOpportunities(address[] assets)`)
+The agent $A$ discovers the agents who's services can be used to achieve the goal and can compose a transaction to combine their services.
