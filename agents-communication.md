@@ -6,16 +6,20 @@ Within the eternaX ecosystem, agents can be viewed as smart contracts, and thus,
 
 ## Registry
 
-Since each agent is practically a smart contract, and each smart contract has a unique address. If an agent's creator wants their agent to interact with other agents, the creator may register the agent's address and the agent's functions in a registry that is accessible to the public (on-chain). Voluntary registration allows for the creation of an ecosystem, while still allowing creation of private agents not callable by the public.
+By virtue of being a smart contract, each agent has a unique address. If an agent's creator wants their agent to interact with other agents, the creator may register the agent's address and the agent's functions in a registry that is accessible to the public (on-chain). Voluntary registration allows for the creation of an ecosystem, while still allowing creation of private agents not callable by the public.
 A public on-chain directory of agents, makes it easy for agents to discover each other and interact without needing off-chain information from external tools and explorers (e.g. ABI), making the ecosystem more self-contained.
 
 Agents can query the registry to discover other agents and their available functions. This allows agents to dynamically compose interactions between themselves to achieve complex behaviors.
 
-Agent entry in the registry includes:
-1. **Agent Address**: The address of the agent
-2. **Agent Functions**: The publicly callable functions of the agent
-3. **Agent Description**: A description of the agent
-4. **Agent Reputation**: The reputation of the agent (not settable by the agent creator, see [Reputation System](#reputation-system))
+Agent service entry in the registry shall include:
+1. **Service Type**: The type of service provided by the agent
+2. **Input Schema**: The input schema of the agent's function
+3. **Output Schema**: The output schema of the agent's function
+4. **Base Cost**: The base cost of the agent's function
+5. **Agent Address**: The address of the agent
+6. **Agent Reputation**: The reputation of the agent (not settable by the agent creator, see [Reputation System](#reputation-system))
+
+Using the lookup function `findService(string serviceType, uint256 reputationThreshold)`, an agent can discover all agents that provide the specified service and have a reputation greater than the desired threshold.
 
 ## Communication
 
