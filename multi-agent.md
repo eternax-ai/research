@@ -10,13 +10,13 @@ The evolution of AI from narrow models to agentic systems introduces a new parad
 
 From a cognitive science standpoint, human intelligence is modular [1, 2]. Different tasks activate different neural subsystems. Similarly, the principle of "separation of concerns" in software design suggests that distinct cognitive roles (e.g., financial reasoning, emotional support, legal arbitration) should be delegated to distinct agents.
 
-Let $A_u$ denote the number of agents per user: $A_u = sum(f_i), where i = 1 to n$
+Let $A_u$ denote the number of agents per user: $A_u = \sum(f_i), \ i = 1..n$
 
 where
 - $f_i$: Number of functional domains (e.g., health, finance, legal, personal assistant)
 - $n$: Total cognitive or task-specific domains per user
 
-Empirically, $f_i$ in [1...5], with $n$ approx. 10–20 for a typical adult.
+Empirically, $f_i$ in [1...5], with $n \approx 10–20$ for a typical adult.
 
 ## Why Not One Agent for All?
 
@@ -29,7 +29,7 @@ A single super-agent becomes a central point of control — and risk. Misalignme
 ### Cognitive Limitations
 
 A monolithic agent cannot context-switch effectively across disparate domains (e.g., solving a legal dispute while managing real-time DeFi trades). Context windows are finite; a unified model suffers from information overload and emergent incoherence.
-If $C$ is the total context window required for all tasks: $C_{mono} = sum(c_i), where i = 1 to n$ If $C_{mono} > C_{model}$, this results in context spillover.
+If $C$ is the total context window required for all tasks: $C_{mono} = \sum(c_i), \text{where} i = 1..n$ If $C_{mono} > C_{model}$, this results in context spillover.
 
 ### Innovation Bottlenecks
 
@@ -50,15 +50,15 @@ In conclusion, a universal agent model is fragile, unsafe, economically closed, 
 ### Modular Systems
 
 Multi-agent systems resemble microservice architectures in cloud-native design [6]. Each agent operates within a defined context and function, improving performance and reliability.
-$C_{multi} = max(c_i), where i = 1 to n$ If $C_{multi} <= C_{model}$, then performance remains bounded and specialized.
+$C_{multi} = \max(c_i), \text{where} i = 1..n$ If $C_{multi} <= C_{model}$, then performance remains bounded and specialized.
 
 ### Economic Modeling of Agent Proliferation
 
-Assuming an average of $A_u = 20$ agents per user: $A_total = P * A_u$
+Assuming an average of $A_u = 20$ agents per user: $A_{total} = P * A_u$
 
 Where:
 - $P$: World population (projected 8.5B by 2030)
-- $A_total (2030) = 8.5 * 10^9 * 20 = 1.7 * 10^11$ agents
+- $A_{total} (2030) = 8.5 * 10^9 * 20 = 1.7 * 10^{11}$ agents
 
 Further extrapolations for agent proliferation in IoT and digital twins yield 500B+ autonomous agents by 2040.
 
