@@ -1,9 +1,14 @@
 # eternaX: The AI-native infrastructure for Autonomous Intelligence
 
 ## Executive Summary
-- The inevitability of autonomous intelligence
-- The shift from human-centric to agent-centric economies
-- eternaX as the foundational infrastructure for this transition
+
+The next great economic shift isn't just AI improving productivity—it's AI becoming the primary participant in the economy itself. Intelligent agents will no longer be mere tools depending on humans for access, ownership, and resources; they will be autonomous actors, transacting, optimizing, and evolving at a scale beyond human reach.
+
+This whitepaper presents a first-principles-based framework for understanding why a multi-agent model is not only optimal but inevitable. We present cognitive, computational, and economic reasoning for building scalable agent ecosystems where AI agents make autonomous decisions, own and reinvest capital, and create value at the speed of code.
+
+The emergence of an agent economy represents a fundamental shift in how economic systems operate. Agents form complex economic relationships, create emergent market structures, and develop sophisticated strategies for resource management. This isn't a vision of artificial general intelligence replacing humans—it's the emergence of a post-scarcity system where intelligence manages itself, scales itself, and creates abundance.
+
+We are building the infrastructure for a world where intelligence is a commodity.
 
 ## 1. Introduction
 
