@@ -33,17 +33,62 @@ The potential of truly autonomous economic actors lies in their ability to creat
 The emergence of agent swarms and networks represents a critical evolution in the AI stack. Just as individual neurons combine to form intelligent brains, individual agents can combine to form intelligent networks. These networks can exhibit emergent properties and capabilities that exceed those of their individual components. The infrastructure needed to support these networks—including communication protocols, trust mechanisms, and economic incentives—is becoming a critical component of the AI ecosystem.
 
 ## 2. The Multi-Agent Paradigm
-### 2.1 Cognitive Foundations
-- Modularity of intelligence
-- Specialization vs. generalization
-- The case for distributed agent systems
 
-### 2.2 Why Not One Universal Agent?
-- Safety and alignment considerations
-- Cognitive limitations
-- Innovation bottlenecks
-- Ethical and political risks
-- Systemic fragility
+The evolution of AI from narrow models to agentic systems introduces a new paradigm: autonomous agents acting on behalf of humans across different domains. The central thesis of this paper is that the future of AI will be structured as a multi-agent ecology, rather than a monolithic or single-agent solution. This mirrors the modularity of human cognition and the composability of digital infrastructure.
+
+### 2.1 Why Not One Universal Agent?
+
+While the idea of a single universal agent is tempting, it fails across multiple dimensions:
+
+**Safety & Alignment**
+
+A single super-agent becomes a central point of control — and risk. Misalignment or adversarial takeover would result in global-scale failure. As noted in Dafoe et al. (2023), centralizing cognitive functions increases the danger of catastrophic misuse.
+
+**Cognitive Limitations**
+
+A monolithic agent cannot context-switch effectively across disparate domains (e.g., solving a legal dispute while managing real-time DeFi trades). Context windows are finite; a unified model suffers from information overload and emergent incoherence.
+
+If $C$ is the total context window required for all tasks: $C_{mono} = \sum(c_i), \text{where} i = 1..n$
+
+If $C_{mono} > C_{model}$, this results in context spillover.
+
+**Innovation Bottlenecks**
+
+A universal agent stifles open innovation — updates are centralized, customization is limited, and agency is abstracted away from users. In a Web3 world, we need permissionless agent creation, not centralized monopolies.
+
+**Ethical and Political Risks**
+
+One agent = one source of truth. This leads to epistemic monoculture and susceptibility to manipulation. No single entity should have absolute epistemological or behavioral control over humanity's interface with intelligence.
+
+**Systemic Fragility**
+
+With one agent, every user interaction adds entropy to a singular system, increasing complexity, cost, and cascading failure risk. Distributed agents are more fault-tolerant and allow for decentralized rollback and correction.
+
+In conclusion, a universal agent model is fragile, unsafe, economically closed, ethically unsustainable, and architecturally infeasible at scale.
+
+### 2.2 Cognitive Foundations
+
+From a cognitive science standpoint, human intelligence is modular. Different tasks activate different neural subsystems. Similarly, the principle of "separation of concerns" in software design suggests that distinct cognitive roles (e.g., financial reasoning, emotional support, legal arbitration) should be delegated to distinct agents.
+
+Let $A_u$ denote the number of agents per user: $A_u = \sum(f_i), \ i = 1..n$
+
+where
+- $f_i$: Number of functional domains (e.g., health, finance, legal, personal assistant)
+- $n$: Total cognitive or task-specific domains per user
+
+Empirically, $f_i$ in [1...5], with $n \approx 10–20$ for a typical adult.
+
+The case for distributed agent systems is strengthened by computational considerations. A monolithic agent cannot context-switch effectively across disparate domains (e.g., solving a legal dispute while managing real-time DeFi trades). Context windows are finite; a unified model suffers from information overload and emergent incoherence.
+
+If $C$ is the total context window required for all tasks: $C_{mono} = \sum(c_i), \text{where} i = 1..n$
+
+If $C_{mono} > C_{model}$, this results in context spillover. In contrast, a multi-agent system can maintain bounded performance:
+
+$C_{multi} = \max(c_i), \text{where} i = 1..n$
+
+If $C_{multi} <= C_{model}$, then performance remains bounded and specialized.
+
+The importance of vertical agents trained for specific domains cannot be overstated. These specialized agents can achieve higher performance and reliability within their domains than general-purpose models. They can be optimized for specific tasks, maintain focused context windows, and develop deep expertise in their areas of specialization. This specialization enables more efficient resource utilization and better outcomes for users.
 
 ### 2.3 The Scale of Multi-Agent Systems
 - Projected agent proliferation
