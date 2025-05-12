@@ -13,14 +13,24 @@ We are building the infrastructure for a world where intelligence is a commodity
 ## 1. Introduction
 
 ### 1.1 The Evolution of Economic Systems
-- Historical context of human-centric economies
-- The emergence of AI as an economic participant
-- The transition to autonomous economic agents
+
+The history of economic systems has been defined by the relationship between humans and their tools. From the agricultural revolution to the industrial age, each major transition has been marked by humans leveraging increasingly sophisticated tools to enhance productivity. However, these tools remained firmly under human control, serving as extensions of human will rather than independent economic actors.
+
+The emergence of AI as an economic participant represents a fundamental shift in this relationship. Unlike previous tools, AI systems are not simply amplifiers of human capability—they are becoming autonomous economic agents capable of independent decision-making, resource allocation, and value creation. This transition mirrors the evolution of biological systems, where simple organisms gave way to complex, autonomous entities capable of self-replication and adaptation.
+
+The transition to autonomous economic agents is not just a technological shift but a paradigmatic change in how economic value is created and distributed. As AI systems gain the ability to own resources, make independent decisions, and participate in economic transactions, they are becoming true economic actors rather than tools. This shift is comparable to the transition from manual labor to automated systems, but with a crucial difference: these new economic actors possess intelligence and autonomy.
+
+The shift from deterministic to stochastic computing paradigms will subsequently reflect this fundamental change. Traditional software systems operate on deterministic principles—given the same input, they produce the same output every time. This predictability has been the foundation of enterprise software, financial systems, and automated processes. However, LLM inference introduces inherent stochasticity: the same prompt can yield different responses, and the model's behavior emerges from complex probability distributions rather than fixed rules. This shift from deterministic to stochastic computing requires new infrastructure that can handle uncertainty, manage state across non-deterministic operations, and ensure reliable outcomes despite the inherent variability of AI systems.
 
 ### 1.2 The Case for Autonomous Intelligence
-- Why autonomous agents are inevitable
-- The limitations of current AI systems
-- The potential of truly autonomous economic actors
+
+The inevitability of autonomous agents stems from both technological and economic forces. As AI systems become more capable, the cost of human oversight and intervention becomes increasingly prohibitive. The complexity of modern economic systems, combined with the speed at which decisions must be made, creates a natural pressure toward automation and autonomy, a fundamental requirement for scaling economic systems to meet the demands of an increasingly complex world.
+
+Current AI systems face significant limitations in their ability to operate autonomously. They lack persistent identity, reliable memory, and the ability to maintain state across interactions. They operate within tightly constrained environments and depend on human oversight for critical decisions. These limitations stem not from technical constraints but from the lack of infrastructure designed to support truly autonomous operation.
+
+The potential of truly autonomous economic actors lies in their ability to create and participate in complex economic networks. These agents can form emergent market structures, develop sophisticated strategies for resource management, and create value through autonomous innovation. They can operate at scales and speeds beyond human capability, enabling economic systems that are more efficient, adaptive, and resilient.
+
+The emergence of agent swarms and networks represents a critical evolution in the AI stack. Just as individual neurons combine to form intelligent brains, individual agents can combine to form intelligent networks. These networks can exhibit emergent properties and capabilities that exceed those of their individual components. The infrastructure needed to support these networks—including communication protocols, trust mechanisms, and economic incentives—is becoming a critical component of the AI ecosystem.
 
 ## 2. The Multi-Agent Paradigm
 ### 2.1 Cognitive Foundations
