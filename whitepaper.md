@@ -142,36 +142,50 @@ These properties collectively enable agents to operate continuously without inte
 
 ## 4. eternaX Architecture
 
-eternaX is an infrastructure layer blockchain network composed of a base consensus chain, an AI-powered cognition layer, and a set of decoupled state machines (i.e. appchains). The base chain manages general consensus, data availability, and settlement for transaction blocks, which worker nodes execute on their respective appchains.
+EternaX is an infrastructure layer blockchain network composed of a consensus chain with an EVM-compatible execution environment and an AI-powered cognition layer. 
 
-### 4.1 Base Chain
+### 4.1 Virtual Machine
 
-The base chain is responsible for achieving consensus between all types of nodes on the general state of the network and ensures a single shared source of truth for all appchains. It implements a variation of the Proof-of-Space-Time consensus algorithm, which ensures temporal linearity, immutability of the chain's history and permanent data availability without reliance on archival nodes.
+EternaX is Ethereum Virtual Machine (EVM)-compatible chain, which can be used to launch any existing Ethereum dApps and smart contracts with an extended AI-integrated precompile set and a new set of AI-native transactions. These precompiles are built-in functions that are used to integrate AI inference into the appchain's state transition function and enable native and verifiable on-chain agent execution. They support requesting inference from integrated AI providers, storing and retrieving data from the content layer for augmented generation (RAG or in-context learning), and storing and retrieving AI agent execution history for verifiability and accountability. On-chain agent execution is a new type of transaction that allows for the execution of arbitrary agentic logic on-chain, enabling a wide range of AI-native applications.
 
-The base chain is maintained by a set of full nodes, which are responsible for proposing new superblocks, validating existing superblocks, and participating in the consensus algorithm. Base chain nodes are required to pledge a minimum amount of storage space to secure the chain and are rewarded for their participation in the consensus algorithm based on the amount of storage they pledge. The storage is used to store partial replicas of the chain's history in a distributed manner, ensuring that the chain's history is always available and can be reconstructed if necessary.
+### 4.2 Protocol-Level Autonomy
 
-The Proof-of-Time component of the consensus algorithm ensures that the base chain's history is sequential, immutable and cannot be altered retroactively. It does this by running a predetermined number of rounds of sequential AES encryption as a delay function on the past chain data and previous iterations. This creates a chain of temporal anchors that are cryptographically linked and cannot be altered retroactively without invalidating the entire chain. Every set of the same predetermined number of iterations of the AES encryption is called a "slot" and is equal to roughly 1 second of real time. Each slot's final output is used as the seed for the block producer lottery, ensuring that the lottery is fair and unpredictable. Each superblock contains a timestamp of the slot that it was created in and guarantees a minimum time delay between the creation of each superblock.
+A fundamental primitive in the EVM runtime is the introduction of protocol-level autonomy through native scheduling. Instead of relying on external keeper networks or centralized automation services, EternaX integrates autonomous execution directly into the protocol. This architectural decision eliminates the need for third-party automation services and creates a foundation for truly self-sustaining smart contracts.
 
-### 4.2 Appchains (Execution Layer)
+The native scheduling system enables smart contracts to autonomously coordinate future actions through consensus-guaranteed execution. This capability is essential for complex decentralized applications that require reliable, time-based operations without external triggers. By implementing scheduling at the protocol level, EternaX ensures that autonomous operations are as fundamental to the blockchain as transactions themselves.
 
-Appchains are specialized decoupled state machines that contain the core logic of the application. They are independent of each other and can have different consensus rules, transaction formats, and state transition functions, while benefiting from the shared security and data availability of the base chain. Each appchain is operated by worker nodes, who follow and validate the base chain's consensus rule and maintain a local copy of the recent chain's state. They only execute transactions that are relevant to their specific appchain, which reduces the amount of data they need to store and process and increases the throughput of the network.
+The integration with the Cognition Layer further enhances the scheduling capabilities. AI providers can be leveraged for dynamic scheduling decisions, enabling adaptive execution based on model predictions and intelligent condition evaluation. Through TEE integration, these AI-enhanced scheduling operations maintain privacy while providing verifiable execution guarantees.
 
-As the first execution environment, we are launching an Ethereum Virtual Machine (EVM) compatible appchain, which will be used to launch any existing Ethereum dApps and smart contracts with an extended AI-integrated precompile set and a new set of AI-native transactions. These precompiles are built-in functions that are used to integrate AI inference into the appchain's state transition function and enable native and verifiable on-chain agent execution. They support requesting inference from integrated AI providers, storing and retrieving data from the content layer for augmented generation (RAG or in-context learning), and storing and retrieving AI agent execution history for verifiability and accountability.
+The Cognition Layer provides AI inference services, which are used to power the precompiles, with a robust and transparent verification process to ensure that inference responses (reasoning, prediction, generation, etc.) are derived from legitimate computation.
 
-A fundamental primitive in the EVM appchain is the introduction of protocol-level autonomy through native scheduling. Instead of relying on external keeper networks or centralized automation services, eternaX integrates autonomous execution directly into the protocol. This architectural decision eliminates the need for third-party automation services and creates a foundation for truly self-sustaining smart contracts.
-
-The native scheduling system enables smart contracts to autonomously coordinate future actions through consensus-guaranteed execution. This capability is essential for complex decentralized applications that require reliable, time-based operations without external triggers. By implementing scheduling at the protocol level, eternaX ensures that autonomous operations are as fundamental to the blockchain as transactions themselves.
+Smart contracts can now operate independently, adapt to changing conditions, and coordinate complex workflows across the network without relying on centralized coordination or external automation services.
 
 ### 4.3 Cognition Layer
 
-The cognition layer provides a backend for all appchains to integrate AI workflows into their state transition functions. It is a global service that is accessible by all appchains and provides a set of precompiles for AI workflows. The two main components of the cognition layer are:
+The cognition layer provides a backend to integrate a set of precompiles for AI workflows. The two main components of the cognition layer are:
 
 - **Compute**: The AI provider registry, which is a marketplace for AI inference services.
-- **Data**: The content layer, which is a fast and globally distributed data service that provides a low-latency and high-throughput data feed for all appchains.
+- **Data**: The content layer, which is a fast and globally distributed data service that provides a low-latency and high-throughput data feed.
 
-The AI providers are the core component of the intelligence layer that enables secure and verifiable AI inference across all appchains. Through a marketplace-style registry, providers offer AI model execution services with different levels of trust, including Trusted Execution Environments (TEEs), where all computations are verifiable and tamper-proof. The registry implements a stake-based security model where providers must lock up collateral, which can be slashed for misbehavior.
+The two components are tightly integrated and work together to provide a seamless and secure AI inference experience. The AI providers can reach the content layer to retrieve data required for the inference request, such as private datasets, or public datasets like news articles, or other content which can be used for in-context learning or RAG.
 
-The content layer can be seen as a chain-integrated version of a classic content delivery network (CDN) that is a fast and globally distributed data service. The purpose of the content layer is to provide a low-latency and high-throughput data feed for all appchains. It is operated by a set of Context Nodes providing efficient access to a wide range of data, including AI models, private and public datasets or other content which can be queried and retrieved by AI workflows. Most content is stored off-chain in a distributed manner, with redundancy and geographic dispersion to ensure data availability and durability. Critical data, such as action records, inference attestations, proofs of execution, etc. is stored on-chain by the base layer nodes.
+### 4.4 AI Providers
+
+The AI providers are the core component of the Cognition Layer that enables secure and verifiable AI inference. Through a marketplace-style registry, providers offer AI model execution services with different levels of trust, including Trusted Execution Environments (TEEs), where all computations are verifiable and tamper-proof. The registry implements a stake-based security model where providers must lock up collateral, which can be slashed for misbehavior.
+
+Inference requests are automatically matched to suitable providers based on model requirements, pricing, performance metrics or other app preferences.
+For sensitive applications, the system ensures reliability through cryptographic attestation at both the provider level (proving secure infrastructure) and per-inference level (proving legitimate computation). This dual attestation approach, combined with economic incentives and continuous monitoring, creates a trustless environment for AI model execution.
+Applications with preference for lower latency can either completely forfeit the requirement for verifiable per-inference attestation or utilize optimistic batching with time window attestation.
+
+### 4.5 Content Layer
+
+The content layer can be seen as a chain-integrated version of a classic content delivery network (CDN) that is a fast and globally distributed data service. The purpose of the content layer is to provide a low-latency and high-throughput data feed. It is operated by a set of Context Nodes providing efficient access to a wide range of data, including AI models, private and public datasets or other content which can be queried and retrieved by AI workflows. Most content is stored off-chain in a distributed manner, with redundancy and geographic dispersion to ensure data availability and durability. Critical data, such as action records, inference attestations, proofs of execution, etc. is stored on-chain by the base layer nodes.
+
+Users can register their content in the content layer and make it available to all applications for as long as they want or make it available to a specific contract for a limited time. They also have the option to store their content on-chain in the base chain, which is more expensive but permanent and provides strong guarantees on availability and durability.
+
+### 4.6 Consensus Chain
+
+The consensus chain is responsible for achieving consensus between all types of nodes on the general state of the network and ensures a single shared source of truth for all nodes. It implements a variation of the Proof-of-Stake consensus algorithm, which ensures temporal linearity, immutability of the chain's history and permanent data availability without reliance on archival nodes.
 
 ## 5. Autonomous Agents
 
