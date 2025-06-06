@@ -1,4 +1,10 @@
-# DRAFT eternaX: The AI-native infrastructure for Autonomous Intelligence
+---
+title: "DRAFT eternaX: The native infrastructure for the Agent Economy"
+author: "Dariia Porechna <dariia.p@eternax.ai>"
+email: "dariia.p@eternax.ai"
+twitter: "@eternaXLabs"
+date: "2025"
+---
 
 ## Summary
 
