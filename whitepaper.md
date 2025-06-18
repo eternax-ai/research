@@ -183,11 +183,31 @@ Inference requests are automatically matched to suitable providers based on mode
 For sensitive applications, the system ensures reliability through cryptographic attestation at both the provider level (proving secure infrastructure) and per-inference level (proving legitimate computation). This dual attestation approach, combined with economic incentives and continuous monitoring, creates a trustless environment for AI model execution.
 Applications with preference for lower latency can either completely forfeit the requirement for verifiable per-inference attestation or utilize optimistic batching with time window attestation.
 
-### 4.5 Content Layer
+### 4.5 Content Layer: The Alpha Reef
 
-The content layer can be seen as a chain-integrated version of a classic content delivery network (CDN) that is a fast and globally distributed data service. The purpose of the content layer is to provide a low-latency and high-throughput data feed. It is operated by a set of Context Nodes providing efficient access to a wide range of data, including AI models, private and public datasets or other content which can be queried and retrieved by AI workflows. Most content is stored off-chain in a distributed manner, with redundancy and geographic dispersion to ensure data availability and durability. Critical data, such as action records, inference attestations, proofs of execution, etc. is stored on-chain by the base layer nodes.
+The content layer is implemented as an emergent, self-organizing data economy we call the "Alpha Reef." This is not a traditional content delivery network built by developers, but a living ecosystem of agents that collaboratively build and maintain a hyper-optimized, queryable knowledge graph that no human team could design or manage.
 
-Users can register their content in the content layer and make it available to all applications for as long as they want or make it available to a specific contract for a limited time. They also have the option to store their content on-chain in the base chain, which is more expensive but permanent and provides strong guarantees on availability and durability.
+The Reef operates as a complex, constantly evolving public good—a decentralized knowledge graph of on-chain and off-chain information, curated and structured by a micro-economy of specialized agents. It transforms the Content Layer from a simple data storage service into an intelligent, self-improving system.
+
+The Reef's ecosystem consists of several symbiotic agent types, each performing a specific function and earning rewards from the protocol treasury as well as fees from the users of the Reef:
+
+1. **Ingestion Agents**: These agents are the primary producers. They monitor specific external data streams (e.g., social media APIs, financial market data, weather feeds, academic journals) and ingest this information, tag it with semantic metadata, and place it into the Reef as new, raw data leaves. They are paid for the volume and quality of the data they contribute.
+
+2. **Linking Agents**: This is the most critical role. Linking Agents constantly crawl the Reef, looking for unstructured data leaves. Using their specialized AI models, they identify non-obvious relationships between disparate leaves. For example, a Linker might connect a sudden drop in a project's token price with a new academic paper on cryptographic vulnerabilities and a GitHub commit in that project's repository. By creating these contextual links, they weave the raw data into a valuable knowledge graph. They are rewarded based on the utility of the links they create, measured by how often those links are traversed by other agents.
+
+3. **Pruning Agents**: To prevent the Reef from becoming an entropic mess, Pruning Agents identify and flag redundant, outdated, or low-value data nodes. They are rewarded for keeping the Reef efficient and relevant. A Pruner's reputation is critical; a mistake in flagging valuable data would result in a severe penalty.
+
+4. **Execution Agents**: These are any other agents that need information. They pay a fee to submit complex queries (e.g., "What is the correlation between all DeFi protocol treasury diversifications and their governance token performance over the subsequent quarter?"). The Reef's emergent structure allows it to answer questions that would be impossible to address with siloed databases.
+
+The long-term sustainability of the Reef hinges on a simple economic principle: the value extracted from a query must exceed its cost. We define this as the "Intelligence Premium":
+
+$$\text{Intelligence Premium} = \text{Value}(\text{Query}) - \text{Cost}(\text{Query})$$
+
+The Reef is economically viable as long as a sufficient volume of queries can generate a positive premium. The architecture is designed to maximize this premium through two key dynamics:
+
+**Amortized Intelligence Cost**: A user querying the Reef does not pay for the creation of the knowledge, but for its retrieval. The cost of an Ingestion Agent's work or a Linking Agent's discovery is amortized over thousands or millions of future queries that traverse the paths they helped create.
+
+**Deflationary Cost of Intelligence**: The operational cost for the agents inhabiting the Reef is primarily driven by the cost of AI inference. As the cost of compute and AI models continues to fall, the cost to run the Reef's ecosystem decreases proportionally, creating a powerful deflationary effect that makes the system increasingly accessible over time.
 
 ### 4.6 Consensus Chain
 
