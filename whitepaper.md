@@ -38,7 +38,7 @@ The transition to an agent-based economy, built on a platform like eternaX, repr
 
 3. **Reducing Execution Friction:** A third significant barrier is execution friction, which encompasses the costs and delays associated with human intermediation (e.g., contracts, settlements, compliance). Autonomous agents on eternaX, possessing sovereign on-chain identities and the capability to execute complex agreements atomically, are designed to minimize this friction.
 
-![Path to Market Efficiency](./img/market-efficiency.png)
+![Path to Market Efficiency](./img/market-efficiency.png){width=80%}
 
 The cumulative effect of reducing these barriers is a potential shift in economic incentives, away from activities that derive profit from speculative advantages and towards those that generate productive value. In a system where informational and executional asymmetries are minimized, market forces would theoretically favor participants who create tangible goods and services. Such a dynamic provides the foundation for a more efficient, production-oriented economy.
 
@@ -96,7 +96,7 @@ where
 - $f_i$: Number of functional domains (e.g., health, finance, legal, personal assistant)
 - $n$: Total cognitive or task-specific domains per user
 
-Empirically, $f_i$ in [1...5], with $n \approx 10–20$ for a typical adult.
+Empirically, $f_i$ in [1...5], with $n \approx 10\text{--}20$ for a typical adult.
 
 The case for distributed agent systems is strengthened by computational considerations. A monolithic agent cannot context-switch effectively across disparate domains (e.g., solving a legal dispute while managing real-time DeFi trades). Context windows are finite; a unified model suffers from information overload and emergent incoherence.
 
@@ -248,7 +248,7 @@ Where:
   - Core business logic actions
   - Self-scheduling actions 
   - State management actions
-- $T$ is the transition function $T: S × D × A → S$ that defines:
+- $T$ is the transition function $T: S \times D \times A \rightarrow S$ that defines:
   - How the agent's state updates after actions
   - How the LLM outputs are processed
   - The sequence of contract function calls
@@ -264,7 +264,7 @@ Our on-chain agent achieves true autonomy through self-contained execution on th
 
 ### 5.3 Agent State Evolution
 
-![Agent Architecture](./img/agent-architecture.png)
+![Agent Architecture](./img/agent-architecture.png){width=80%}
 
 The transition function $T$ encodes the actual smart contract code that:
 1. Retrieves necessary data (part of $S$)
@@ -273,7 +273,7 @@ The transition function $T$ encodes the actual smart contract code that:
 4. Executes the appropriate actions ($A$) including self-scheduling actions
 5. Updates the contract state
 
-We define a subset of all possible actions $A$ as the self-scheduling actions $A_{ss}$. When the transition function $T$ is implemented with a self-scheduling action, $T: S × D × A_{ss} → S$, we call $T$ an autonomy loop. The presence of the self-scheduling action allows the agent to schedule itself to run at a future time. This is a key feature of the agent's autonomy, as it allows the agent to plan for future actions and state transitions without relying on human intervention or external orchestration.
+We define a subset of all possible actions $A$ as the self-scheduling actions $A_{ss}$. When the transition function $T$ is implemented with a self-scheduling action, $T: S \times D \times A_{ss} \rightarrow S$, we call $T$ an autonomy loop. The presence of the self-scheduling action allows the agent to schedule itself to run at a future time. This is a key feature of the agent's autonomy, as it allows the agent to plan for future actions and state transitions without relying on human intervention or external orchestration.
 
 Since the agent is a smart contract, it's state is intrinsically linked to the blockchain state. Let $B_t$ represent the blockchain state at time $t$, and $s_t \in S$ represent the agent's state at time $t$. Here we understand time $t$ relative to the agent's genesis and the progression of time is recorded in increments of state evolutions. This is equivalent to recording the number of times the transition function $T$ has been applied. As such, the agent's state $s_t$ can be thought of as a function of the number of times the transition function has been applied, $s_t = T^t(s_0)$. This is to distinguish the agent's state from the blockchain state, which is recorded as $B_t$ and evolves as result of actions of the agent and other participants on the blockchain. There may be unequally spaced time steps between agentstate evolutions, but we can always normalize the time steps to a continuous function of the number of state evolutions.
 
@@ -325,7 +325,7 @@ Current industry approaches attempt to resolve this tension through verification
    
    $$O_{opt} = n_{watchers} \cdot O_{inference}$$
 
-   where $n_{watchers}$ is the number of watchers. This approach introduces latency proportional to $c$ and requires $n_{watchers} \geq 1$ honest watchers. The overhead is $O_{opt} \geq n_{watchers}x$ inference cost. While requiring less computational resources than zero-knowledge verification, this approach uses interactive fraud proofs in case of disputes that are infamously difficult to implement and test, limiting the utility of the approach.
+   where $n_{watchers}$ is the number of watchers. This approach introduces latency proportional to $c$ and requires $n_{watchers} \geq 1$ honest watchers. The overhead is $O_{opt} \geq n_{watchers} \cdot x$ inference cost. While requiring less computational resources than zero-knowledge verification, this approach uses interactive fraud proofs in case of disputes that are infamously difficult to implement and test, limiting the utility of the approach.
 
 3. **Quorum Verification**:
    Let $Q = \{D_1, D_2, ..., D_n\}$ be a set of $n$ decision engine calls. The result is accepted if:
@@ -348,11 +348,11 @@ $$O_{tee} = (1 + \epsilon) \cdot O_{inference}$$
 
 where $\epsilon \approx 0.1$ represents the TEE overhead. This overhead is significantly lower than the verification-centric approaches:
 
-$$O_{tee} \ll O_{zk} \approx 1000x$$
+$$O_{tee} \ll O_{zk} \approx 1000 \cdot x$$
 
-$$O_{tee} \ll O_{opt} \geq n_{watchers}x$$
+$$O_{tee} \ll O_{opt} \geq n_{watchers} \cdot x$$
 
-$$O_{tee} \ll O_{q} = nx$$
+$$O_{tee} \ll O_{q} = n \cdot x$$
 
 while providing practical security guarantees.
 
