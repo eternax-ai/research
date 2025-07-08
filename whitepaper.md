@@ -7,11 +7,11 @@ date: "2025"
 
 ## Authors
 
-[**Dariia Porechna**](https://www.linkedin.com/in/dariia-porechna/) | EternaX Labs | [dariia.p@eternax.ai](mailto:dariia.p@eternax.ai)
+[**Dariia Porechna**](https://www.linkedin.com/in/dariia-porechna/) | Co-founder, EternaX Labs | [dariia.p@eternax.ai](mailto:dariia.p@eternax.ai)
 
-[**Parthh Sharad Birla**](https://www.linkedin.com/in/parthh-sharad-birla-b3607bb4/) | EternaX Labs | [parth.b@eternax.ai](mailto:parth.b@eternax.ai)
+[**Parthh Sharad Birla**](https://www.linkedin.com/in/parthh-sharad-birla-b3607bb4/) | Co-founder, EternaX Labs | [parth.b@eternax.ai](mailto:parth.b@eternax.ai)
 
-[**Chen Feng**](https://scholar.google.com/citations?user=D8b0l-EAAAAJ) | University of British Columbia | [chen.feng@ubc.ca](mailto:chen.feng@ubc.ca)
+[**Dr. Chen Feng**](https://scholar.google.com/citations?user=D8b0l-EAAAAJ) | Associate Professor, University of British Columbia | [chen.feng@ubc.ca](mailto:chen.feng@ubc.ca)
 
 ## Summary
 
