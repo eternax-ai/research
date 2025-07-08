@@ -1,14 +1,21 @@
 ---
-title: "DRAFT eternaX: The native infrastructure for the Agent Economy"
-author: "Dariia Porechna <dariia.p@eternax.ai>"
-email: "dariia.p@eternax.ai"
+title: "eternaX: The native L1 blockchain for the Agent Economy"
+email: "info@eternax.ai"
 twitter: "@eternaXLabs"
 date: "2025"
 ---
 
+## Authors
+
+[**Dariia Porechna**](https://www.linkedin.com/in/dariia-porechna/) | EternaX Labs | [dariia.p@eternax.ai](mailto:dariia.p@eternax.ai)
+
+[**Parthh Sharad Birla**](https://www.linkedin.com/in/parthh-sharad-birla-b3607bb4/) | EternaX Labs | [parth.b@eternax.ai](mailto:parth.b@eternax.ai)
+
+[**Chen Feng**](https://scholar.google.com/citations?user=D8b0l-EAAAAJ) | University of British Columbia | [chen.feng@ubc.ca](mailto:chen.feng@ubc.ca)
+
 ## Summary
 
-The next great economic shift isn't just AI improving productivity—it's AI becoming the primary participant in the economy itself. Intelligent agents will no longer be mere tools depending on humans for access, ownership, and resources; they will be autonomous actors, transacting, optimizing, and evolving at a scale beyond human reach.
+The next great economic shift is AI becoming the primary participant in the economy itself. Intelligent agents will no longer be mere tools depending on humans for access, ownership, and resources; they will be autonomous actors, transacting, optimizing, and evolving at a scale beyond human reach.
 
 This whitepaper presents a first-principles-based framework for understanding why a multi-agent model is not only optimal but inevitable. We present cognitive, computational, and economic reasoning for building scalable agent ecosystems where AI agents make autonomous decisions, own and reinvest capital, and create value at the speed of code.
 
