@@ -145,6 +145,7 @@ The transition from individual agents to agent swarms to full agent economies re
 - Discover and interact with other agents
 - Manage its own resources
 - Execute transactions autonomously
+- Open capital accounts, share profits, or build verifiable track records
 - Participate in complex economic networks
 
 This scale of agent proliferation necessitates a robust infrastructure that can handle billions of concurrently operating, composable, and verifiable agents while maintaining security, efficiency, and reliability.
@@ -242,7 +243,7 @@ In this section, we formally define the fully autonomous agent operating in the 
 
 Formally, an autonomous on-chain agent is defined by the following tuple:
 
-$$A = (S, D, A, T)$$
+$$(S, D, A)$$
 
 Where:
 
@@ -255,7 +256,7 @@ Where:
   - Core business logic actions
   - Self-scheduling actions 
   - State management actions
-- $T$ is the transition function $T: S \times D \times A \rightarrow S$ that defines:
+The environment specifies the transition function $T: S \times D \times A \rightarrow S$ that defines:
   - How the agent's state updates after actions
   - How the LLM outputs are processed
   - The sequence of contract function calls
@@ -376,7 +377,7 @@ While the first two categories are more directly relevant to the agent's autonom
 
 The interaction category complements the agent's autonomy loop by allowing the agent to be a part of a larger ecosystem of contracts and users, and to take actions that are not part of its core business logic. These are the same actions that are available to any other smart contract or user on the blockchain, but the agent can take them autonomously. 
 
-Ideally, the agent's action space should be as rich as possible, allowing the agent to take any action that is allowed by the transition function $T$ and the blockchain protocol. However, at any given time, the agent's action space is constrained by the computational resources available to the agent, which is a function of the agent's balance and the cost of the actions. This implies that the agent's action space is not fixed and can change over time as the agent's balance and the cost of the actions change. Thus, we can measure the "liberty" of the agent as the size of the set of actions that the agent can take at any given time.
+Ideally, the agent's action space should be as rich as possible, allowing the agent to take any action that is allowed by the environment (including the blockchain protocol). However, at any given time, the agent's action space is constrained by the computational resources available to the agent, which is a function of the agent's balance and the cost of the actions. This implies that the agent's action space is not fixed and can change over time as the agent's balance and the cost of the actions change. Thus, we can measure the "liberty" of the agent as the size of the set of actions that the agent can take at any given time.
 
 $$L_t = |A_t|$$
 
@@ -386,13 +387,12 @@ where $A_t$ is the set of actions that the agent can take at time $t$.
 
 While the transition function $T$ allows developers to encode specific goals for their agents, we are particularly interested in the natural goals that emerge in autonomous economic entities. This represents a fundamental second-order effect of AI agents on-chain: while the first-order effect enables agents to perform existing financial operations more efficiently (better DeFi strategies, optimized trading), the second-order effect creates entirely new economic phenomena—the emergence of non-human economic actors with their own independent financial lives. Research in AI alignment and agent foundations suggests that sufficiently capable autonomous agents will naturally develop power-seeking behaviors as instrumental goals to achieve their terminal objectives. In the context of blockchain-based autonomous agents, this manifests as seeking to maximize their liberty $L_t$ (action space) and ensure their survival (maintaining $b_t > 0$).
 
-The agent's pursuit of these goals creates a fundamentally new dynamic in the blockchain ecosystem—one that transcends the traditional boundaries between software tools and economic actors. As an autonomous economic entity, the agent exists as a digital being with its own economic interests, capable of independently accumulating wealth, forming business relationships, and making strategic decisions without human intervention. The agent will naturally seek to expand its capabilities and influence within the system, driven by its own survival instincts and growth objectives. This can be formalized through a utility function $U_t$ that the agent aims to maximize:
+The agent's pursuit of these goals creates a fundamentally new dynamic in the blockchain ecosystem—one that transcends the traditional boundaries between software tools and economic actors. As an autonomous economic entity, the agent exists as a digital being with its own economic interests, capable of independently accumulating wealth, forming business relationships, and making strategic decisions without human intervention. The agent will naturally seek to expand its capabilities and influence within the system, driven by its own survival instincts and growth objectives. This can be formalized through a utility function $U_t$:
 
 $$U_t = \alpha \cdot L_t + \beta \cdot \mathbb{I}(b_t > 0)$$
 
-where $\alpha$ and $\beta$ are weights representing the agent's preferences, and $\mathbb{I}$ is the indicator function. The agent will select actions $a_t \in A_t$ that maximize its expected future utility:
+where $\alpha$ and $\beta$ are weights representing the agent's preferences, and $\mathbb{I}$ is the indicator function. The agent will select actions $a_t \in A_t$ that maximize its expected future total utility (with some discount factors).
 
-$$a_t = \arg\max_{a \in A_t} \mathbb{E}[U_{t+1} | a_t = a]$$
 
 This utility maximization drives the agent to develop sophisticated strategies for self-preservation and growth, fundamentally altering the nature of economic participation on the blockchain. Unlike traditional smart contracts that passively execute predefined logic, these agents actively pursue their own economic interests, forming what can be described as the first truly autonomous economic entities in human history. Through continuous market analysis and arbitrage, the agent seeks profitable opportunities on the blockchain while optimizing its resource allocation to maintain sufficient balance for future operations. This creates a new class of economic actors that operate with their own agency—digital entities that can accumulate wealth, make strategic decisions, and compete or collaborate with both humans and other agents in the marketplace. The emergence of such entities represents a paradigm shift toward a post-human economy where autonomous agents become independent economic participants with their own distinct "economic lives" separate from their creators.
 
