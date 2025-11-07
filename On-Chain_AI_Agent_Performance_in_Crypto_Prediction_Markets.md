@@ -6,6 +6,13 @@ email: "info@eternax.ai"
 twitter: "@eternaXLabs"
 date: "2025-11-06"
 ---
+## Authors
+
+[**Dariia Porechna**](https://www.linkedin.com/in/dariia-porechna/) | Co-founder, EternaX Labs | [dariia.p@eternax.ai](mailto:dariia.p@eternax.ai)
+
+[**Parthh Sharad Birla**](https://www.linkedin.com/in/parthh-sharad-birla-b3607bb4/) | Co-founder, EternaX Labs | [parth.b@eternax.ai](mailto:parth.b@eternax.ai)
+
+[**Dr. Chen Feng**](https://scholar.google.com/citations?user=D8b0l-EAAAAJ) | Associate Professor, University of British Columbia | [chen.feng@ubc.ca](mailto:chen.feng@ubc.ca)
 
 ## Abstract
 
