@@ -1,8 +1,11 @@
-# On-Chain AI Agent Performance in Crypto Prediction Markets: Economically-Incentivized Agents Achieve 75% Accuracy
-
-*Examining the forecasting accuracy of autonomous agents in decentralized prediction markets and implications for AI-native DeFi infrastructure*
-
- 
+---
+title: "On-Chain AI Agent Performance in Crypto Prediction Markets: Economically-Incentivized Agents Achieve 75% Accuracy"
+subtitle: "Examining the forecasting accuracy of autonomous agents in decentralized prediction markets and implications for AI-native DeFi infrastructure"
+author: "EternaX Labs"
+email: "info@eternax.ai"
+twitter: "@eternaXLabs"
+date: "2025-11-06"
+---
 
 ## Abstract
 
