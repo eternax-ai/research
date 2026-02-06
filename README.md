@@ -1,41 +1,30 @@
-# Autonomy is inevitable. EternaX is its economic foundation.
+# Post-Quantum Finance Is Inevitable. EternaX Is Its Foundation.
 
-EternaX is the base layer for the **Agent Economy**, a decentralized system where intelligent software agents operate as sovereign economic actors.
+EternaX is a market-infrastructure Layer-1 blockchain designed for future-proof financial markets, where security, identity, and settlement remain safe under quantum adversaries without sacrificing throughput or latency.
 
-We believe that the next chapter of the internet won't be human-first or AI-as-a-service. It will be **agentic**, populated by autonomous entities that perceive, decide, and transact on their own terms.
+Most blockchains cannot adopt post-quantum cryptography without major performance loss, complex migrations, and ecosystem-wide upgrades. EternaX does not have that trade-off. Every asset and application on EternaX — stablecoins, balances, margin accounts, vaults — inherits post-quantum protection automatically.
 
-**Today:** Crypto is human-to-protocol. You use DeFi, manage positions, make decisions.
+## Design Goals
 
-**Tomorrow:** It will be agent-to-agent. Your AI uses other AI. Agents compose with agents to create flows no human designed.
+- **Post-Quantum by Default**: Native PQ-secure accounts, transaction authentication, and consensus.
 
-This is **AgentFi**—and it's 10x bigger than DeFi because agents can compose.
+- **High-Performance Execution**: Sub-second finality (~120ms), optimized verification paths, and gasless execution at the edge.
 
-## Our Mission
+- **Composable Market Infrastructure**: Deterministic execution, scheduling primitives, and policy-enforced contracts for continuous market systems.
 
-To enable a future where **intelligence becomes executable**, **value becomes autonomous**, and **markets evolve without permission**.
+- **MEV-Resistant Ordering & Auditable Privacy**: Designed for fair execution and institutional-grade auditability.
 
-Not just AI agents that help you trade.  
-**AI agents that coordinate with each other—creating emergent financial infrastructure.**
+## Cryptography & Systems Research
 
-## We Are Building the Primitives of Autonomy
+EternaX integrates novel cryptographic and distributed systems research into production infrastructure:
 
-- **On-chain Sovereignty**: Agents with persistent state, history, and strategic intent
-- **Neural Routing**: Verifiable AI inference with callbacks, directly on-chain
-- **Self-Scheduling**: Future actions encoded into consensus, executed without human triggers
-- **Verifiable Cognition**: Inference and coordination secured by TEEs
-- **Agent Composability**: Trustless coordination—your agent calls my agent calls their agent, atomically
-- **Agentic Markets**: Prediction markets, agent vaults, liquidity venues where agents coordinate
+ - **Information-Theoretic Post-Quantum Digital Signatures** optimized for distributed verification and low-latency consensus, enabling PQ security with minimal TPS degradation compared to classical schemes.
 
-This is the substrate where intelligence earns, capital allocates itself, and coordination costs approach zero.
+- **Coded Networking & Reliable Broadcast** to reduce p95/p99 propagation latency under load.
 
-**For Developers:** Build autonomous financial products where agents compose with agents  
-**For Users:** Try the [live platform](https://docc.eternax.ai/home) and see agent-to-agent coordination in action and follow us on [X](https://x.com/EternaXLabs)  
-**For Strategic Partners:** Reach out to info@eternax.ai
+- **Parallel & Asynchronous BFT** multi-instance consensus with fairness guarantees and fast finality.
 
-If you believe the future belongs to autonomous agents—not just as tools, but as participants—EternaX is your platform.
+- **TEE-Based Confidential Execution** for private order flow, verifiable inference, and MEV mitigation.
 
-*From human-to-protocol → to agent-to-agent*
 
-[Dariia Porechna](https://www.linkedin.com/in/dariia-porechna), [Parthh Sharad Birla](https://www.linkedin.com/in/parthh-sharad-birla-b3607bb4/)
-
-2025
+Contact: info@eternax.ai
