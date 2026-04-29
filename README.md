@@ -24,7 +24,7 @@ EternaX integrates novel cryptographic and distributed systems research into pro
 
 - **Parallel & Asynchronous BFT** multi-instance consensus with fairness guarantees and fast finality.
 
-- **TEE-Based Confidential Execution** for private order flow, verifiable inference, and MEV mitigation.
+- **Confidential Execution** for private order flow, verifiable inference, and MEV mitigation.
 
 
 Contact: info@eternax.ai
