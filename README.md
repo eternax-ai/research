@@ -94,7 +94,7 @@ BibTeX entries for the papers are in [`CITATION.bib`](CITATION.bib).
 
 ## Archive
 
-[`archive/`](archive/) holds superseded material: the April 2026 whitepaper, written when EternaX led with its post-quantum-native Layer 1, and 2025 work on on-chain AI agents from before the company's post-quantum focus.
+[`archive/`](archive/) holds 2025 work on on-chain AI agents from before the company's post-quantum focus.
 
 ## Team
 
