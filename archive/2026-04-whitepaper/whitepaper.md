@@ -5,6 +5,8 @@ twitter: "@eternaXLabs"
 date: "April 2026"
 ---
 
+> **Archived (April 2026).** This whitepaper predates EternaX's current positioning as the post-quantum authorization layer for institutional digital assets. Market figures are as of April 2026. Current research: [EternaX Research](../../README.md).
+
 ## Authors
 
 [**Dariia Porechna**](https://www.linkedin.com/in/dariia-porechna/) | Co-founder, EternaX Labs | [dariia.p@eternax.ai](mailto:dariia.p@eternax.ai)

@@ -6,6 +6,9 @@ email: "info@eternax.ai"
 twitter: "@eternaXLabs"
 date: "2025-11-06"
 ---
+
+> **Archived (November 2025).** This paper predates EternaX's post-quantum focus. Current research: [EternaX Research](../../README.md).
+
 ## Authors
 
 [**Dariia Porechna**](https://www.linkedin.com/in/dariia-porechna/) | Co-founder, EternaX Labs | [dariia.p@eternax.ai](mailto:dariia.p@eternax.ai)
