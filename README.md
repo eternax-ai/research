@@ -14,6 +14,7 @@ This repository indexes the research behind that design: papers, cryptanalysis, 
 | Architecture boundaries | Which properties a post-quantum distributed authorization design can combine | [arXiv:2609.03547](https://arxiv.org/abs/2609.03547) |
 | Compact authentication | Small, quantum-secure authentication records for ledgers | [arXiv:2605.03230](https://arxiv.org/abs/2605.03230), [`silmarils-paper`](https://github.com/eternax-ai/silmarils-paper) |
 | Hash-function cryptanalysis | Collision attacks on step-reduced SHA-256 | [39-step SHA-256](#collision-attacks-on-39-step-sha-256) |
+| Bitcoin custody | Keeping Bitcoin keys out of a quantum attacker's reach before Bitcoin verifies post-quantum signatures | [One-Time Vaulting](#one-time-vaulting-for-bitcoin), [`eternax-bitcoin-vault`](https://github.com/eternax-ai/eternax-bitcoin-vault) |
 | Institutional exposure | Where classical signatures sit in custody, issuance, collateral and settlement, and what migration costs | [Reports](#reports) |
 
 ## Papers
@@ -51,6 +52,14 @@ A collision attack on SHA-256 reduced to 39 of its 64 steps that costs less than
 
 The figures are complexity estimates under declared heuristics, accepted by the board's reviewers and not yet peer-reviewed; later filings on the board refine the tail measurement. The result does not extend to full SHA-256, and SLH-DSA's security does not rely on SHA-256 collision resistance. A joint technical report is in preparation.
 
+## Bitcoin custody
+
+### One-Time Vaulting for Bitcoin
+
+Paarrthhh Birla, Dariia Porechna · October 2026 · [Write-up](https://eternax.ai/blogs/one-time-vault/index.html) · Code: [`eternax-bitcoin-vault`](https://github.com/eternax-ai/eternax-bitcoin-vault)
+
+A Bitcoin custody method built from a standard P2WSH output locked to 100 fresh ECDSA keys that must all sign, each vault spent exactly once. At rest, only a SHA-256 script hash is on chain. In flight, an attacker must derive all 100 private keys before the next block, against one key for an ordinary spend. With Google Quantum AI's 2026 estimate of about nine minutes per key on a primed first-generation fast-clock machine, an attacker wins the race against a single-key spend about 41% of the time; against the 100-key vault it needs about a hundred such machines in parallel for the same odds. Bitcoin Core's default relay policy accepts the spend as standard. A 100-key spend was confirmed on mainnet in block 973,546 at 2,759 vbytes. The method needs no fork and no miner involvement. It is a work factor for the period before Bitcoin verifies post-quantum signatures, not a substitute for them.
+
 ## Reports
 
 Institutional research on post-quantum exposure in digital-asset infrastructure. Index: [eternax.ai/reports](https://eternax.ai/reports/index.html).
@@ -78,6 +87,7 @@ Institutional research on post-quantum exposure in digital-asset infrastructure.
 | [`silmarils-paper`](https://github.com/eternax-ai/silmarils-paper) | Rust reference implementation of the SILMARILS two-party transferable designated-verifier mode (arXiv:2605.03230) |
 | [`pq-onchainid`](https://github.com/eternax-ai/pq-onchainid) | SLH-DSA and ML-DSA claim verification for ERC-3643 / ONCHAINID compliance flows |
 | [`pluto-testnet-tools`](https://github.com/eternax-ai/pluto-testnet-tools) | TypeScript CLI for the Pluto testnet: SLH-DSA and SILMARILS dual-signed transfers and EVM transactions |
+| [`eternax-bitcoin-vault`](https://github.com/eternax-ai/eternax-bitcoin-vault) | One-Time Vaulting for Bitcoin: 100-key one-time P2WSH vaults from one BIP-39 seed, with Bitcoin Core regtest and mainnet measurements |
 | [`utxo-ots`](https://github.com/eternax-ai/utxo-ots) | One-time hash signatures finalized on the Bitcoin ledger through standard P2WSH, for attestations and single-use seals |
 
 ## Testnet
